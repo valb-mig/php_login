@@ -8,8 +8,6 @@
   <title>Home</title>
 </head>
 <body>
-
-  
   <h1>Homepage</h1>
   <hr>
   <p>Para ver o conteudo, registre uma conta.</p>

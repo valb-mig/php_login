@@ -18,38 +18,38 @@ return $valor;
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(empty($_POST['usuario'])){
-    $erroUser = "Digite algo.";
+    $erroUser = "Digite algo!";
   }else{
     $user = clean($_POST['usuario']);
       if(!preg_match("/^[a-zA-Z' ]*$/", $user)){
-        $erroUser = "Usuario, inválido!.";
+        $erroUser = "Nome inválido!";
       }
   } 
 
   if(empty($_POST['email'])){
-    $erroEmail = "Digite algo.";
+    $erroEmail = "Digite algo!";
   }else{
     $email = clean($_POST['email']);
       if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $erroEmail = "Email, inválido!.";
+        $erroEmail = "Email inválido!";
       }
   } 
 
   if(empty($_POST['senha'])){
-    $erroSenha = "Digite algo.";
+    $erroSenha = "Digite algo";
   }else{
     $senha = clean($_POST['senha']);
       if(strlen($senha) < 6){
-        $erroSenha = "Senha muito pequena!.";
+        $erroSenha = "Senha muito pequena!";
       }
   } 
 
   if(empty($_POST['conf_senha'])){
-    $erroConfSenha = "Digite algo.";
+    $erroConfSenha = "Digite algo!";
   }else{
     $confSenha = clean($_POST['conf_senha']);
       if($confSenha != $senha){
-        $erroConfSenha = "Senha diferente.";
+        $erroConfSenha = "As senhas são diferentes!";
       }
   } 
 
@@ -65,37 +65,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
   <title>Registro</title>
 </head>
 <body>
 
-<h1>Registro</h1>
-<hr>
-
-<form method="post">
-
-  <label>Usuario: </label>
-  <br><input type="text" name="usuario" size="25" placeholder="Digite um usuário..."><br>
-  <span class="erro"><?php echo $erroUser;?></span><br><br>
-
-  <label>Email: </label>
-  <br><input type="email" name="email" size="25" placeholder="Digite um email..."><br>
-  <span class="erro"><?php echo $erroEmail;?></span><br><br>
-  
-  <label>Senha: </label>
-  <br><input type="password" name="senha" size="25" placeholder="Digite uma senha..."><br>
-  <span class="erro"><?php echo $erroSenha;?></span><br><br>
-  
-  <label>Confirmar Senha: </label>
-  <br><input type="password" name="conf_senha" size="25" placeholder="Confirme sua senha..."><br>
-  <span class="erro"><?php echo $erroConfSenha;?></span><br><br>
-  
-  <button type="submit">Enviar</button>
-
-</form>
-
-<hr>
-<a href="../index.php">Voltar</a>
+<section class="registro">
+    <div class="registro_form">
+      <form method="post">
+        <label>Registro</label>
+          <input type="text" name="usuario" placeholder="Nome" autofocus>
+          <br><span class="erro"><?php echo $erroUser;?></span>
+          <input type="email" name="email" placeholder="Email">
+          <br><span class="erro"><?php echo $erroEmail;?></span>
+          <input type="password" name="senha" placeholder="Senha">
+          <br><span class="erro"><?php echo $erroSenha;?></span>
+          <input type="password" name="conf_senha" placeholder="Confirmar senha">
+          <br><span class="erro"><?php echo $erroConfSenha;?></span>
+        <input type="submit" value="ENVIAR">
+      </form>
+    <p>Já possui uma conta? <a href="login.php">clique aqui</a></p>
+  </div>
+</section>
 
 </body>
 </html>
