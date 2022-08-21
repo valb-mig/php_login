@@ -1,10 +1,10 @@
 
 <img src=".repo_images/login.png" align="center" width="1000">
 
-##📚 Sobre
+## 📚 Sobre
 <p>Sistema de login feito com `PHP`, `HTML` e `CSS`, com validação de dados.</p>
 
-##📜 Tasklist
+## 📜 Tasklist
 
 - Criação dos formulários.✅
 - Validação de dados.✅
