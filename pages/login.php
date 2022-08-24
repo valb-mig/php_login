@@ -1,11 +1,9 @@
 <?php
-// Declaração das variaveis de erro.
+// VARIAVEIS DE ERRO.
 $erroUser = "";
-$erroEmail = "";
 $erroSenha = "";
-$erroConfSenha = "";
 
-// Função para limpar stings
+// LIMPAR STRINGS (ANT INJECT)
 function clean($valor){
   $valor = trim($valor);
   $valor = htmlspecialchars($valor);
@@ -13,10 +11,11 @@ function clean($valor){
 return $valor;
 
 }
-// Logica do formulário
-//°1
+
+// VERIFICAÇÕES FORMULÁRIO
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+  // NOME
   if(empty($_POST['usuario'])){
     $erroUser = "Digite algo!";
   }else{
@@ -26,6 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
   } 
 
+  // SENHA
   if(empty($_POST['senha'])){
     $erroSenha = "Digite algo";
   }else{
@@ -35,6 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
   } 
 
+  // SE TODOS OS DADOS FORAM DIGITADOS E VERIFICADOS
   if(($erroUser == "") && ($erroSenha == "")){
   
   }
@@ -50,8 +51,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <link rel="stylesheet" href="../CSS/style.css">
   <title>Login</title>
 </head>
-<body>
 
+<body>
 <section class="login">
     <div class="login_form">
       <form method="post">
@@ -65,6 +66,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <p>Ainda não possui uma conta? <a href="registro.php">clique aqui</a></p>
   </div>
 </section>
-
 </body>
 </html>

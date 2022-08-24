@@ -1,11 +1,14 @@
 <?php
-// Declaração das variaveis de erro.
+// DATA BASE
+require('../db/conexao.php');
+
+// VARIAVEIS DE ERRO.
 $erroUser = "";
 $erroEmail = "";
 $erroSenha = "";
 $erroConfSenha = "";
 
-// Função para limpar stings
+// LIMPAR STRINGS (ANT INJECT)
 function clean($valor){
   $valor = trim($valor);
   $valor = htmlspecialchars($valor);
@@ -13,10 +16,11 @@ function clean($valor){
 return $valor;
 
 }
-// Logica do formulário
-//°1
+
+// VERIFICAÇÕES FORMULÁRIO
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+  // NOME
   if(empty($_POST['usuario'])){
     $erroUser = "Digite algo!";
   }else{
@@ -26,6 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
   } 
 
+  // EMAIL
   if(empty($_POST['email'])){
     $erroEmail = "Digite algo!";
   }else{
@@ -35,6 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
   } 
 
+  // SENHA
   if(empty($_POST['senha'])){
     $erroSenha = "Digite algo";
   }else{
@@ -43,7 +49,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $erroSenha = "Senha muito pequena!";
       }
   } 
-
+  
+  // CONFIRMAR SENHA
   if(empty($_POST['conf_senha'])){
     $erroConfSenha = "Digite algo!";
   }else{
@@ -53,11 +60,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
   } 
 
+  // SE TODOS OS DADOS FORAM DIGITADOS E VERIFICADOS
   if(($erroUser == "") && ($erroEmail == "") && ($erroSenha == "") && ($erroConfSenha == "")){
+  // INSERIR NO BANCO DE DADOS
+  $sql = $pdo->prepare("INSERT INTO usuarios VALUES(null,?,?,?)");
+  $sql->execute(array($user,$email,$senha));
+  // DIRECIONAR PARA LOGIN.PHP
   header('location: login.php');
   }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -68,8 +81,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <link rel="stylesheet" href="../CSS/style.css">
   <title>Registro</title>
 </head>
-<body>
 
+<body>
 <section class="registro">
     <div class="registro_form">
       <form method="post">
@@ -87,6 +100,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <p>Já possui uma conta? <a href="login.php">clique aqui</a></p>
   </div>
 </section>
-
 </body>
 </html>
