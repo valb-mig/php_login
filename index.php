@@ -5,14 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="CSS/homepage.css">
   <title>Home</title>
 </head>
+
+
+
 <body>
-  <h1>Homepage</h1>
-  <hr>
-  <p>Para ver o conteudo, registre uma conta.</p>
-  <hr>
-  <a aling='right' href = 'pages/registro.php'>registro<a>
+  <div class="navbar" align="right">
+    <a href="pages/registro.php">registrar</a>
+  </div>
+  <div class="middle" align="left">
+    <h1>Homepage</h1>
+    <br><p>Para ver o conteúdo, <b>registre</b> uma conta.</p>
+  </div> 
 </body>
 </html>

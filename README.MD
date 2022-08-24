@@ -1,8 +1,17 @@
 
 <img src=".repo_images/login.png" align="center" width="1000">
 
+<br>
+
 ## 📚 Sobre
-<p>Sistema de login feito com `PHP`, `HTML` e `CSS`, com validação de dados.</p>
+<p>Linguagens utilizadas.</p>
+
+<div align="left">
+ <img width="" src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+ <img width="" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+</div>
+
+<br>
 
 ## 📜 Tasklist
 
@@ -12,3 +21,7 @@
 - Adicionar dados ao banco de dados.❌
 - Terminar homepage.❌
 
+<br>
+
+## 🤔 Como testar?
+<p>Em breve... o projeto ainda não está finalizado.</p>
