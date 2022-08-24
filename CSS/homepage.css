@@ -1,0 +1,45 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONFIGURAÇÃO PRINCIPAL */
+body{
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("../assets/waves.jpeg");
+  background-size: 2500px;
+  background-repeat: repeat;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+  background-color: #101010;
+  padding: 15px;
+  margin: 0;
+}
+
+/* LINK */
+a{
+  font-size: 30px;
+  color: #CF9D71;
+  text-decoration: none;
+}
+
+/* CONTEÚDO */
+.middle{
+  color: white;
+  background-color: #101010;
+  box-shadow: 0px 0px 10px black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  min-height: 60%;
+  margin-top: 20px;
+  margin-left: 20px;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+}

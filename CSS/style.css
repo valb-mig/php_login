@@ -1,11 +1,17 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONFIGURAÇÃO PRINCIPAL */
 body{
+  background-attachment: fixed;
   background-position: center;
   background-image: url("../assets/waves.jpeg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-
+  background-size: 2500px;
+  background-repeat: repeat;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
 }
 
 .registro{
