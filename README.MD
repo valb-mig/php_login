@@ -18,7 +18,7 @@
 - Criação dos formulários.✅
 - Validação de dados.✅
 - Estilizar Formulário.✅
-- Adicionar dados ao banco de dados.❌
+- Adicionar dados ao banco de dados.✅
 - Terminar homepage.❌
 
 <br>
