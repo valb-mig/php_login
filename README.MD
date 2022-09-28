@@ -24,4 +24,8 @@
 <br>
 
 ## 🤔 Como testar?
-<p>Em breve... o projeto ainda não está finalizado.</p>
+
+- Clonar o repositório dentro de /opt/lampp/htdocs.
+- Iniciar um server xampp.
+- Abrir navegador.
+- Colocar a URL localhost/php_login
